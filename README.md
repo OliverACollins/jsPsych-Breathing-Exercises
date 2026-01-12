@@ -1,7 +1,7 @@
 # jsPsych-Breathing-Exercises
 <b>A jsPsych breathing exercise implementation created to assist users in carrying out deep breathing techniques, with relevant applications across personal mindfulness practice and research paradigms.</b>
 
-[Try the implementation](LINK HERE)
+[Try the implementation](https://oliveracollins.github.io/jsPsych-Breathing-Exercises/)
 
 ❗ **WARNING**
 If you begin to experience dizziness, air hunger, pain, or any other adverse effects when practicing deep breathing techniques, <b>immediately</b> STOP engaging with the exercise.
