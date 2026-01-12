@@ -3,7 +3,7 @@
 
 [Try the implementation](https://oliveracollins.github.io/jsPsych-Breathing-Exercises/)
 
-❗ **WARNING**
+❗**WARNING:**
 If you begin to experience dizziness, air hunger, pain, or any other adverse effects when practicing deep breathing techniques, <b>immediately</b> STOP engaging with the exercise.
 
 ## Rationale
@@ -18,7 +18,7 @@ The primary reason for wanting to code this implementation was to produce reliab
 
 ## What breathing exercises are included in this implementation?
 ### 4-7-8 breathing
-There are two different lengths of 4-7-8 breathing included:<b>4x</b> cycles and <b>8x</b> cycles. If you are a novice to this breathing practice, it is <b>strongly advised</b> that you start out with the 4x cycles version. This is due to the likelihood of experiencing adverse physiological side effects (dizziness, fainting, discomfort) when undertaking 8x cycles due to the strong parasympathetic intensity of 4-7-8 breathing.
+There are two different lengths of 4-7-8 breathing included: <b>4x</b> cycles and <b>8x</b> cycles. If you are a novice to this breathing practice, it is <b>strongly advised</b> that you start out with the 4x cycles version. This is due to the likelihood of experiencing adverse physiological side effects (dizziness, fainting, discomfort) when undertaking 8x cycles due to the strong parasympathetic intensity of 4-7-8 breathing.
 
 <figure>
  <img src = "docs/media/478_representation.png" alt = "4-7-8 breathing representation"/>
@@ -26,7 +26,7 @@ There are two different lengths of 4-7-8 breathing included:<b>4x</b> cycles and
 </figure>
 
 ### Box breathing
-There are four different lengths of box breathing included:<b>short</b> (2 minutes), <b>medium</b> (5 minutes), <b>long</b> (10 minutes), and <b>longer</b> (20 minutes). If you are new to box breathing, it is suggested that you start out on either the short- or medium-length exercises.
+There are four different lengths of box breathing included: <b>short</b> (2 minutes), <b>medium</b> (5 minutes), <b>long</b> (10 minutes), and <b>longer</b> (20 minutes). If you are new to box breathing, it is suggested that you start out on either the short- or medium-length exercises.
 
 <figure>
  <img src = "docs/media/box_representation.png" alt = "box breathing representation"/>
@@ -34,7 +34,7 @@ There are four different lengths of box breathing included:<b>short</b> (2 minut
 </figure>
 
 ### 7-11 breathing
-There are four different lengths of 7-11 breathing included:<b>short</b> (2 minutes), <b>medium</b> (5 minutes), <b>long</b> (10 minutes), and <b>longer</b> (20 minutes). Just like with box breathing, if you are new to deep breathing practices, it is suggested that you start out on either the short- or medium-length 7-11 exercises.
+There are four different lengths of 7-11 breathing included: <b>short</b> (2 minutes), <b>medium</b> (5 minutes), <b>long</b> (10 minutes), and <b>longer</b> (20 minutes). Just like with box breathing, if you are new to deep breathing practices, it is suggested that you start out on either the short- or medium-length 7-11 exercises.
 
 <figure>
  <img src = "docs/media/711_representation.png" alt = "7-11 breathing representation"/>
