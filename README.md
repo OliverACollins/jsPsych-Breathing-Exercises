@@ -21,7 +21,7 @@ The primary reason for wanting to code this implementation was to produce reliab
 There are two different lengths of 4-7-8 breathing included:<b>4x</b> cycles and <b>8x</b> cycles. If you are a novice to this breathing practice, it is <b>strongly advised</b> that you start out with the 4x cycles version. This is due to the likelihood of experiencing adverse physiological side effects (dizziness, fainting, discomfort) when undertaking 8x cycles due to the strong parasympathetic intensity of 4-7-8 breathing.
 
 <figure>
- <img src = "breathing_exercises/media/478_representation.png" alt = "4-7-8 breathing representation"/>
+ <img src = "docs/media/478_representation.png" alt = "4-7-8 breathing representation"/>
  <figcaption><i>A representation of one cycle of 4-7-8 breathing</i></figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ There are two different lengths of 4-7-8 breathing included:<b>4x</b> cycles and
 There are four different lengths of box breathing included:<b>short</b> (2 minutes), <b>medium</b> (5 minutes), <b>long</b> (10 minutes), and <b>longer</b> (20 minutes). If you are new to box breathing, it is suggested that you start out on either the short- or medium-length exercises.
 
 <figure>
- <img src = "breathing_exercises/media/box_representation.png" alt = "box breathing representation"/>
+ <img src = "docs/media/box_representation.png" alt = "box breathing representation"/>
 <figcaption><i>A representation of one cycle of box breathing</i></figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ There are four different lengths of box breathing included:<b>short</b> (2 minut
 There are four different lengths of 7-11 breathing included:<b>short</b> (2 minutes), <b>medium</b> (5 minutes), <b>long</b> (10 minutes), and <b>longer</b> (20 minutes). Just like with box breathing, if you are new to deep breathing practices, it is suggested that you start out on either the short- or medium-length 7-11 exercises.
 
 <figure>
- <img src = "breathing_exercises/media/711_representation.png" alt = "7-11 breathing representation"/>
+ <img src = "docs/media/711_representation.png" alt = "7-11 breathing representation"/>
 <figcaption><i>A representation of one cycle of 7-11 breathing</i></figcaption>
 </figure>
 
