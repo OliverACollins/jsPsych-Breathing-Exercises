@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jsPsych Breathing Exercises</title>
+
+    <!-- jsPsych -->
+    <script src="https://unpkg.com/jspsych@8.2.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@2.1.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-fullscreen@2.0.0"></script>
+
+    <link href="https://unpkg.com/jspsych@8.2.2/css/jspsych.css" rel="stylesheet" />
+
+    <style>
+    .jspsych-html-button-response-btngroup {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .jspsych-btn {
+      padding: 8px 12px;
+      font-size: 15px;
+      white-space: normal;
+    }
+    </style>
+
+    <!-- Breathing Exercise Scripts -->
+    <script src="478.js"></script>
+    <script src="box.js"></script>
+    <script src="711.js"></script>
+
+</head>
+
+<body></body>
+
+<script>
+
+// initialise jsPsych + create timeline
+const jsPsych = initJsPsych({
+    override_safe_mode: true,
+});
+
+const timeline = [];
+
+
+// welcome message
+const welcome = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: "<h3><b>jsPsych Breathing Exercises Implementation</b></h3> <p>Press any key to begin</p>",
+    choices: [" "]
+};
+
+
+// fullscreen on
+const fullscreen_on = {
+    type: jsPsychFullscreen,
+    fullscreen_mode: true,
+    message: "<p>Press the button to enter fullscreen</p>",
+    button_label: "Continue"
+};
+
+
+// selection menu
+const selection_menu = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <h3>Select a breathing exercise</h3>
+    <br>
+    <h4>4-7-8 breathing</h4>
+    <div class="button-group">
+      <button class="jspsych-btn">Beginner (4 cycles)</button>
+      <button class="jspsych-btn">Advanced (8 cycles)</button>
+    </div>
+
+    <h4>Box breathing</h4>
+    <div class="button-group">
+      <button class="jspsych-btn">Short (2 min)</button>
+      <button class="jspsych-btn">Medium (5 min)</button>
+      <button class="jspsych-btn">Long (10 min)</button>
+      <button class="jspsych-btn">Longer (20 min)</button>
+    </div>
+
+    <h4>7-11 breathing</h4>
+    <div class="button-group">
+      <button class="jspsych-btn">Short (2 min)</button>
+      <button class="jspsych-btn">Medium (5 min)</button>
+      <button class="jspsych-btn">Long (10 min)</button>
+      <button class="jspsych-btn">Longer (20 min)</button>
+    </div>
+  `,
+  choices: [], // we handle clicks manually
+  data: { task: "exercise_selection" },
+
+  on_load: function() {
+    // Add event listeners to all buttons
+    document.querySelectorAll('.jspsych-btn').forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        let exercise = null;
+        let variant = null;
+        let cycles = null;
+
+        switch(i) {
+          case 0: exercise = "478"; cycles = 4; break;
+          case 1: exercise = "478"; cycles = 8; break;
+          case 2: exercise = "box"; variant = "short"; break;
+          case 3: exercise = "box"; variant = "medium"; break;
+          case 4: exercise = "box"; variant = "long"; break;
+          case 5: exercise = "box"; variant = "longer"; break;
+          case 6: exercise = "711"; variant = "short"; break;
+          case 7: exercise = "711"; variant = "medium"; break;
+          case 8: exercise = "711"; variant = "long"; break;
+          case 9: exercise = "711"; variant = "longer"; break;
+        }
+
+        jsPsych.data.addProperties({
+          exercise_type: exercise,
+          box_variant: variant,
+          variant_711: variant,
+          cycles_478: cycles
+        });
+
+        jsPsych.finishTrial({ response: i });
+      });
+    });
+  }
+};
+
+
+// 478 breathing exercises - 4 and 8 cycles
+const breathing_4_cycles = {
+  timeline: [
+    instructions_4cycles_478,
+    practice_478,
+    instructions2_478,
+    fixation_478,
+    procedure_4_cycles_478,
+    finish_478
+  ],
+  conditional_function: function () {
+    const sel = jsPsych.data
+      .get()
+      .filter({ task: "exercise_selection" })
+      .last(1)
+      .values()[0];
+
+    return sel.exercise_type === "478" && sel.cycles_478 === 4;
+  }
+};
+
+const breathing_8_cycles = {
+  timeline: [
+    instructions_8cycles_478,
+    practice_478,
+    instructions2_478,
+    fixation_478,
+    procedure_8_cycles_478,
+    finish_478
+  ],
+  conditional_function: function () {
+    const sel = jsPsych.data
+      .get()
+      .filter({ task: "exercise_selection" })
+      .last(1)
+      .values()[0];
+
+    return sel.exercise_type === "478" && sel.cycles_478 === 8;
+  }
+};
+
+
+// box breathing exercises - short, medium, long, longer
+const box_breathing_short = {
+  timeline: [instructions_box_short, practice_box, instructions2_box, fixation_box, procedure_box_short, finish_box],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "box" && sel.box_variant === "short";
+  }
+};
+
+const box_breathing_med = {
+  timeline: [instructions_box_med, practice_box, instructions2_box, fixation_box, procedure_box_med, finish_box],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "box" && sel.box_variant === "medium";
+  }
+};
+
+const box_breathing_long = {
+  timeline: [instructions_box_long, practice_box, instructions2_box, fixation_box, procedure_box_long, finish_box],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "box" && sel.box_variant === "long";
+  }
+};
+
+const box_breathing_longer = {
+  timeline: [instructions_box_longer, practice_box, instructions2_box, fixation_box, procedure_box_longer, finish_box],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "box" && sel.box_variant === "longer";
+  }
+};
+
+
+// 7-11 breathing exercises - short, medium, long, longer
+const breathing_711_short = {
+  timeline: [instructions_711_short, practice_711, instructions2_711, fixation_711, procedure_711_short, finish_711],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "711" && sel.variant_711 === "short";
+  }
+};
+
+const breathing_711_med = {
+  timeline: [instructions_711_med, practice_711, instructions2_711, fixation_711, procedure_711_med, finish_711],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "711" && sel.variant_711 === "medium";
+  }
+};
+
+const breathing_711_long = {
+  timeline: [instructions_711_long, practice_711, instructions2_711, fixation_711, procedure_711_long, finish_711],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "711" && sel.variant_711 === "long";
+  }
+};
+
+const breathing_711_longer = {
+  timeline: [instructions_711_longer, practice_711, instructions2_711, fixation_711, procedure_711_longer, finish_711],
+  conditional_function: function () {
+    const sel = jsPsych.data.get().filter({ task: "exercise_selection" }).last(1).values()[0];
+    return sel.exercise_type === "711" && sel.variant_711 === "longer";
+  }
+};
+
+
+// menu loop
+const menu_loop = {
+  timeline: [
+    selection_menu,
+    breathing_4_cycles,
+    breathing_8_cycles,
+    box_breathing_short,
+    box_breathing_med,
+    box_breathing_long,
+    box_breathing_longer,
+    breathing_711_short,
+    breathing_711_med,
+    breathing_711_long,
+    breathing_711_longer
+  ],
+  loop_function: function () {
+    const last_finish = jsPsych.data
+      .get()
+      .filterCustom(trial =>
+        trial.task === "finish_478" || trial.task === "finish_box" || trial.task === "finish_711"
+      )
+      .last(1)
+      .values()[0];
+
+    return last_finish && last_finish.return_to_menu === true;
+  }
+};
+
+
+timeline.push(welcome);
+timeline.push(fullscreen_on);
+timeline.push(menu_loop);
+
+
+// run the experiment
+jsPsych.run(timeline);
+
+</script>
+</html>
