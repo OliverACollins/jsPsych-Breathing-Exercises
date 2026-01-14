@@ -3,7 +3,8 @@
 
 [Try the implementation](https://oliveracollins.github.io/jsPsych-Breathing-Exercises/)
 
-<p class="callout danger">❗**WARNING**: If you begin to experience dizziness, air hunger, pain, or any other adverse effects when practicing deep breathing techniques, <b>immediately</b> STOP engaging with the exercise.</p>
+> [!CAUTION]
+> If you begin to experience dizziness, air hunger, pain, or any other adverse effects when practicing deep breathing techniques, <b>immediately</b> STOP engaging with the exercise.
 
 ## Rationale
 The primary reason for wanting to code this implementation was to produce reliable breathwork exercises to be used in a controlled research environment.
