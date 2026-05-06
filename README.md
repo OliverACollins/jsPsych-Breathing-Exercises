@@ -18,7 +18,7 @@ The primary reason for wanting to code this implementation was to produce reliab
 
 ## What breathing exercises are included in this implementation?
 ### 4-7-8 breathing
-There are two different lengths of 4-7-8 breathing included: <b>4x</b> cycles and <b>8x</b> cycles. If you are a novice to this breathing practice, it is <b>strongly advised</b> that you start out with the 4x cycles version. This is due to the likelihood of experiencing adverse physiological side effects (dizziness, fainting, discomfort) when undertaking 8x cycles due to the strong parasympathetic intensity of 4-7-8 breathing.
+There are two different lengths of 4-7-8 breathing included: <b>4x</b> cycles and <b>8x</b> cycles. If you are a novice to this breathing practice, it is <b>strongly advised</b> that you start out with the 4x cycles version. This is due to the likelihood of experiencing adverse physiological side effects (dizziness, fainting, discomfort) when undertaking 8x cycles from the strong parasympathetic intensity of 4-7-8 breathing.
 
 <figure>
  <img src = "docs/media/478_representation.png" alt = "4-7-8 breathing representation"/>
