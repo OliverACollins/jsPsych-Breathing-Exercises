@@ -14,7 +14,7 @@ The primary reason for wanting to code this implementation was to produce reliab
 - For each exercise, users are given different lengths to select from
 - Instructions are provided on how to effectively engage with each exercise within the parameters of this technology-assisted setup
 - In each breathing exercise, a real time countdown sequence is provided for every step of the cycle
-- This implementation is available via an easily-accesible webpage!
+- This implementation is available via an easily-accessible webpage!
 
 ## What breathing exercises are included in this implementation?
 ### 4-7-8 breathing
